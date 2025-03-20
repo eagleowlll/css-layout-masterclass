@@ -1,26 +1,15 @@
-// const str = "Wrong Answer";
-// const strdown = str.toLowerCase();
-// console.log(strdown);
+const input = require("fs").readFileSync("test.txt").toString().split(" ");
 
-// const stri = "Wrong Answer";
-// const striup = stri.toUpperCase();
-// console.log(striup);
+let swapped = "";
 
-function swapcase(str) {
-  let swapped = "";
+for (let i = 0; i < input.length; i++) {
+  const char = input[i];
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-
-    if (char === char.toUpperCase()) {
-      swapped += char.toLowerCase();
-    } else {
-      swapped += char.toUpperCase();
-    }
+  if (char === char.toUpperCase()) {
+    swapped += char.toLowerCase();
+  } else {
+    swapped += char.toUpperCase();
   }
-  return swapped;
 }
 
-const str = "CiTy";
-const swappedstr = swapcase(str);
-console.log(swappedstr);
+console.log(swapped);
