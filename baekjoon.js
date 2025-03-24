@@ -1,15 +1,15 @@
-const input = require("fs").readFileSync("test.txt").toString().split(" ");
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
 
-let swapped = "";
+const T = Number(input[0]);
+const output = [];
 
-for (let i = 0; i < input.length; i++) {
-  const char = input[i];
-
-  if (char === char.toUpperCase()) {
-    swapped += char.toLowerCase();
-  } else {
-    swapped += char.toUpperCase();
-  }
+for (let i = 1; i <= T; i++) {
+  const [a, b] = input[i].split(" ").map(Number);
+  output.push(a + b);
 }
 
-console.log(swapped);
+console.log(output.join("\n"));
