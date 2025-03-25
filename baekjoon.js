@@ -1,15 +1,10 @@
-const input = require("fs")
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split("\n");
+const input = require("fs").readFileSync("/dev/stdin").toString().trim();
 
-const T = Number(input[0]);
-const output = [];
-
-for (let i = 1; i <= T; i++) {
-  const [a, b] = input[i].split(" ").map(Number);
-  output.push(a + b);
+const a = input.split(" ").map(Number);
+let sum = 0;
+for (let i = 0; i < a.length; i++) {
+  sum += a[i] * a[i];
 }
+const result = sum % 10;
 
-console.log(output.join("\n"));
+console.log(result);
