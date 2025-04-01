@@ -18,14 +18,27 @@ body {
 }
 
 .header {
+  overflow-x: scroll;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE, Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Edge
+  }
   .header__list {
     display: flex;
     gap: 10px;
     color: white;
+    width: max-content;
+
     .header__list-item {
       border: 1px solid rgba($color: #fff, $alpha: 0.5);
       padding: 10px;
       border-radius: 20px;
+    }
+    .header__list-item--inverted {
+      background-color: white;
+      color: black;
     }
   }
 }
